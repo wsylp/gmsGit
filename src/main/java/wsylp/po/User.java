@@ -1,6 +1,5 @@
 package wsylp.po;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
 public class User {
@@ -11,6 +10,8 @@ public class User {
     private String loginName;
 
     private String password;
+
+    private String orgCode;
 
     private String phone;
 
@@ -24,9 +25,9 @@ public class User {
 
     private String workType;
 
-    private LocalDateTime createTime;
+    private Date createTime;
 
-    private  LocalDateTime updateTime;
+    private Date updateTime;
 
     public Long getId() {
         return id;
@@ -58,6 +59,14 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password == null ? null : password.trim();
+    }
+
+    public String getOrgCode() {
+        return orgCode;
+    }
+
+    public void setOrgCode(String orgCode) {
+        this.orgCode = orgCode == null ? null : orgCode.trim();
     }
 
     public String getPhone() {
@@ -108,19 +117,19 @@ public class User {
         this.workType = workType == null ? null : workType.trim();
     }
 
-    public LocalDateTime getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(LocalDateTime createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public LocalDateTime getUpdateTime() {
+    public Date getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(LocalDateTime updateTime) {
+    public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
 }

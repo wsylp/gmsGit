@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import wsylp.dao.MenuMapper;
+import wsylp.dao.RoleMapper;
 import wsylp.dao.UserMapper;
 import wsylp.po.Menu;
+import wsylp.po.Role;
 import wsylp.service.UserService;
 import wsylp.util.TreeNoteUtil;
 import wsylp.vo.MenuTree;
@@ -19,6 +21,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userDao;
+    
+    @Autowired
+    private RoleMapper roleDao;
 
     @Autowired
     private MenuMapper menuDao;
@@ -35,6 +40,12 @@ public class UserServiceImpl implements UserService {
         }
         List<MenuTree> fatherNode = TreeNoteUtil.getFatherNode(treelist);
         return fatherNode;
+    }
+
+    @Override
+    public List<Role> getRolesByLoginName(String loginName) {
+       List<Role> roleList = roleDao.getRolesByLoginName(loginName);
+       return roleList;
     }
 
 }

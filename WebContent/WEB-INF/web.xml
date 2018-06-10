@@ -5,7 +5,7 @@
  <context-param>
     <param-name>contextConfigLocation</param-name>
    <!-- ,classpath*:spring-cxf-rest.xml-->
-    <param-value>classpath:gms/spring-*.xml,classpath*:gms/ac*.xml</param-value>
+    <param-value>classpath:gms/spring-m*.xml,classpath*:gms/spring-a*.xml</param-value>
   </context-param>
   <!-- spring监听器 -->
   <listener>
